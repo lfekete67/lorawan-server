@@ -11,7 +11,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
         .identifier(nga.field('name'));
     var config = nga.entity('config')
         .identifier(nga.field('name'));
-    var servers = nga.entity('szerverek')
+    var servers = nga.entity('servers')
         .identifier(nga.field('sname'));
     var applications = nga.entity('applications')
         .identifier(nga.field('name'));
@@ -1235,7 +1235,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .perPage(7)
         )
     );
-    var dashLeft = ['servers', 'events', 'rxframes'];
+    var dashLeft = ['szerverek', 'events', 'rxframes'];
     var dashRight = ['gateways', 'nodes', 'connectors'];
 
     // ---- menu
