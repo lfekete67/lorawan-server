@@ -1,0 +1,13 @@
+#!/bin/bash
+SERVER="localhost:8080"
+AUTH="admin:admin"
+
+if [ -z "$1" ]; then
+    DIR="."
+else
+    DIR=$1
+fi
+
+for f in $DIR/*.json; do
+    curl --digest -u $AUTH --header Content-Type:application/json --data @$f http://$SERVER/api/$(basename $f .json)
+done
