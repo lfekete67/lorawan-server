@@ -11,7 +11,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
         .identifier(nga.field('name'));
     var config = nga.entity('config')
         .identifier(nga.field('name'));
-    var servers = nga.entity('servers')
+    var servers = nga.entity('szerverek')
         .identifier(nga.field('sname'));
     var applications = nga.entity('applications')
         .identifier(nga.field('name'));
@@ -1235,7 +1235,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .perPage(7)
         )
     );
-    var dashLeft = ['servers', 'events', 'rxframes'];
+    var dashLeft = ['szerverek', 'events', 'rxframes'];
     var dashRight = ['gateways', 'nodes', 'connectors'];
 
     // ---- menu
@@ -1403,7 +1403,7 @@ function dashboardTemplate(leftPanel, rightPanel) {
 <div class="row">
     <div class="col-lg-12">
         <div class="page-header" style="padding-bottom:0px">
-            <table style="width: 100%"> <tbody><tr> <td> <h1>Dashboard</h1> </td> <td style="text-align: right"><img src="admin/obudai.jpg" alt="Óbudai Egyetem" style="width: auto; height: 70px;"><img src="admin/albacomp.png" alt="Albacomp" style="width: auto; height: 70px;"><img src="admin/naik.jpg" alt="NAIK" style="width: auto; height: 70px;"></td></tr> </tbody></table>
+            <table style="width: 100%"> <tbody><tr> <td> <h1>Központi rendszer-LoRaWAN szerver</h1> </td> <td style="text-align: right"><img src="admin/obudai.jpg" alt="Óbudai Egyetem" style="width: auto; height: 70px;"><img src="admin/albacomp.png" alt="Albacomp" style="width: auto; height: 70px;"><img src="admin/naik.jpg" alt="NAIK" style="width: auto; height: 70px;"></td></tr> </tbody></table>
         </div>
     </div>
 </div>
