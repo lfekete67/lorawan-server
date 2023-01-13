@@ -429,7 +429,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     admin.addEntity(networks);
 
     // ---- multicast_channels
-    multicast_channels.listView().title('Multicast csatornák');
+    multicast_channels.listView().title('Multicast Channels');
     multicast_channels.listView().fields([
         nga.field('devaddr').label('DevAddr').isDetailLink(true),
         nga.field('profiles', 'choices'),
@@ -851,7 +851,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     admin.addEntity(ignored_nodes);
 
     // ---- rxframes
-    rxframes.listView().title('Keretek')
+    rxframes.listView().title('Frames')
         .actions(['filter', 'export', '<purgebtn entity="entity"></purgebtn>']);
     rxframes.listView().fields([
         nga.field('dir')
@@ -1240,38 +1240,38 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
 
     // ---- menu
     admin.menu(nga.menu()
-        .addChild(nga.menu().title('Szerver').icon('<span class="fa fa-server fa-fw"></span>')
+        .addChild(nga.menu().title('Server').icon('<span class="fa fa-server fa-fw"></span>')
             .addChild(nga.menu(users).icon('<span class="fa fa-user fa-fw"></span>'))
             .addChild(nga.menu(servers).icon('<span class="fa fa-desktop fa-fw"></span>'))
             .addChild(nga.menu()
-                .title('Konfiguráció')
+                .title('Configuration')
                 .link('/config/edit/main')
                 .icon('<span class="fa fa-cog fa-fw"></span>'))
             .addChild(nga.menu(events).icon('<span class="fa fa-exclamation-triangle fa-fw"></span>'))
         )
-        .addChild(nga.menu().title('Infrastruktúra').icon('<span class="fa fa-sitemap fa-fw"></span>')
+        .addChild(nga.menu().title('Infrastructure').icon('<span class="fa fa-sitemap fa-fw"></span>')
             .addChild(nga.menu(areas).icon('<span class="fa fa-street-view fa-fw"></span>'))
             .addChild(nga.menu(gateways).icon('<span class="fa fa-wifi fa-fw"></span>'))
             .addChild(nga.menu(networks).icon('<span class="fa fa-cloud fa-fw"></span>'))
             .addChild(nga.menu(multicast_channels).icon('<span class="fa fa-bullhorn fa-fw"></span>'))
         )
-        .addChild(nga.menu().title('Eszközök').icon('<span class="fa fa-cubes fa-fw"></span>')
+        .addChild(nga.menu().title('Devices').icon('<span class="fa fa-cubes fa-fw"></span>')
             .addChild(nga.menu(groups).icon('<span class="fa fa-th fa-fw"></span>'))
-            .addChild(nga.menu(profiles).title('Profilok').icon('<span class="fa fa-pencil-square-o fa-fw"></span>'))
-            .addChild(nga.menu(devices).title('Megbízott eszközök').icon('<span class="fa fa-cube fa-fw"></span>'))
-            .addChild(nga.menu(nodes).title('Aktivált eszközök (Nodes)').icon('<span class="fa fa-rss fa-fw"></span>'))
-            .addChild(nga.menu(ignored_nodes).title('Figyelmen kívül hagyott eszközök').icon('<span class="fa fa-ban fa-fw"></span>'))
+            .addChild(nga.menu(profiles).title('Profiles').icon('<span class="fa fa-pencil-square-o fa-fw"></span>'))
+            .addChild(nga.menu(devices).title('Commissioned').icon('<span class="fa fa-cube fa-fw"></span>'))
+            .addChild(nga.menu(nodes).title('Activated (Nodes)').icon('<span class="fa fa-rss fa-fw"></span>'))
+            .addChild(nga.menu(ignored_nodes).title('Ignored').icon('<span class="fa fa-ban fa-fw"></span>'))
         )
     );
     if (typeof addPrivateMenu === "function") {
         addPrivateMenu(nga, admin, dashLeft, dashRight);
     }
     admin.menu()
-        .addChild(nga.menu().title('Háttérrendszerek').icon('<span class="fa fa-industry fa-fw"></span>')
+        .addChild(nga.menu().title('Backends').icon('<span class="fa fa-industry fa-fw"></span>')
             .addChild(nga.menu(handlers).icon('<span class="fa fa-cogs fa-fw"></span>'))
             .addChild(nga.menu(connectors).icon('<span class="fa fa-bolt fa-fw"></span>'))
         )
-        .addChild(nga.menu(rxframes).title('Keretek').icon('<span class="fa fa-comments fa-fw"></span>'))
+        .addChild(nga.menu(rxframes).title('Frames').icon('<span class="fa fa-comments fa-fw"></span>'))
         .autoClose(false);
 
     admin.dashboard()
