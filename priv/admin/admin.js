@@ -1206,7 +1206,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .sortField('last_rx')
             .perPage(7)
         )
-        .addCollection(nga.collection(rxframes).title('Keretek')
+        .addCollection(nga.collection(rxframes).title(Frames')
             .fields([
                 nga.field('dir')
                     .template(function(entry){ return dirIndicator(entry.values) }),
@@ -1235,7 +1235,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .perPage(7)
         )
     );
-    var dashLeft = ['szerverek', 'events', 'rxframes'];
+    var dashLeft = ['servers', 'events', 'rxframes'];
     var dashRight = ['gateways', 'nodes', 'connectors'];
 
     // ---- menu
