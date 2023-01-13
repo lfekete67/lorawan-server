@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
     cd lorawan-server && \
     make release install && \
     cd .. && \
-    rm -rf lorawan-server && \
+#    rm -rf lorawan-server && \
     apk del build-deps
 
 # volume for the mnesia database and logs
