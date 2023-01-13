@@ -1,2 +1,2 @@
-# -lorawan-server
+# lorawan-server
 LoRaWAN network szerver
