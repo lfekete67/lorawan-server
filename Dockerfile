@@ -12,9 +12,9 @@ RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
     make release install && \
     cd .. && \
     rm -rf lorawan-server && \
-	chmod +x lorawan-server && \
     apk del build-deps
 
+RUN ["chmod", "+x", "/usr/lib/lorawan-server/bin/lorawan-server"]
 # volume for the mnesia database and logs
 RUN mkdir /storage
 VOLUME /storage
