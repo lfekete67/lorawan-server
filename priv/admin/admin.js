@@ -429,7 +429,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     admin.addEntity(networks);
 
     // ---- multicast_channels
-    multicast_channels.listView().title('Multicast Channels');
+    multicast_channels.listView().title('Multicast csatornák');
     multicast_channels.listView().fields([
         nga.field('devaddr').label('DevAddr').isDetailLink(true),
         nga.field('profiles', 'choices'),
@@ -851,7 +851,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     admin.addEntity(ignored_nodes);
 
     // ---- rxframes
-    rxframes.listView().title('Frames')
+    rxframes.listView().title('Keretek')
         .actions(['filter', 'export', '<purgebtn entity="entity"></purgebtn>']);
     rxframes.listView().fields([
         nga.field('dir')
@@ -1206,7 +1206,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .sortField('last_rx')
             .perPage(7)
         )
-        .addCollection(nga.collection(rxframes).title('Frames')
+        .addCollection(nga.collection(rxframes).title('Keretek')
             .fields([
                 nga.field('dir')
                     .template(function(entry){ return dirIndicator(entry.values) }),
@@ -1240,38 +1240,38 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
 
     // ---- menu
     admin.menu(nga.menu()
-        .addChild(nga.menu().title('Server').icon('<span class="fa fa-server fa-fw"></span>')
+        .addChild(nga.menu().title('Szerver').icon('<span class="fa fa-server fa-fw"></span>')
             .addChild(nga.menu(users).icon('<span class="fa fa-user fa-fw"></span>'))
             .addChild(nga.menu(servers).icon('<span class="fa fa-desktop fa-fw"></span>'))
             .addChild(nga.menu()
-                .title('Configuration')
+                .title('Konfiguráció')
                 .link('/config/edit/main')
                 .icon('<span class="fa fa-cog fa-fw"></span>'))
             .addChild(nga.menu(events).icon('<span class="fa fa-exclamation-triangle fa-fw"></span>'))
         )
-        .addChild(nga.menu().title('Infrastructure').icon('<span class="fa fa-sitemap fa-fw"></span>')
+        .addChild(nga.menu().title('Infrastruktúra').icon('<span class="fa fa-sitemap fa-fw"></span>')
             .addChild(nga.menu(areas).icon('<span class="fa fa-street-view fa-fw"></span>'))
             .addChild(nga.menu(gateways).icon('<span class="fa fa-wifi fa-fw"></span>'))
             .addChild(nga.menu(networks).icon('<span class="fa fa-cloud fa-fw"></span>'))
             .addChild(nga.menu(multicast_channels).icon('<span class="fa fa-bullhorn fa-fw"></span>'))
         )
-        .addChild(nga.menu().title('Devices').icon('<span class="fa fa-cubes fa-fw"></span>')
+        .addChild(nga.menu().title('Eszközök').icon('<span class="fa fa-cubes fa-fw"></span>')
             .addChild(nga.menu(groups).icon('<span class="fa fa-th fa-fw"></span>'))
-            .addChild(nga.menu(profiles).title('Profiles').icon('<span class="fa fa-pencil-square-o fa-fw"></span>'))
-            .addChild(nga.menu(devices).title('Commissioned').icon('<span class="fa fa-cube fa-fw"></span>'))
-            .addChild(nga.menu(nodes).title('Activated (Nodes)').icon('<span class="fa fa-rss fa-fw"></span>'))
-            .addChild(nga.menu(ignored_nodes).title('Ignored').icon('<span class="fa fa-ban fa-fw"></span>'))
+            .addChild(nga.menu(profiles).title('Profilok').icon('<span class="fa fa-pencil-square-o fa-fw"></span>'))
+            .addChild(nga.menu(devices).title('Megbízott eszközök').icon('<span class="fa fa-cube fa-fw"></span>'))
+            .addChild(nga.menu(nodes).title('Aktivált eszközök (Nodes)').icon('<span class="fa fa-rss fa-fw"></span>'))
+            .addChild(nga.menu(ignored_nodes).title('Figyelmen kívül hagyott eszközök').icon('<span class="fa fa-ban fa-fw"></span>'))
         )
     );
     if (typeof addPrivateMenu === "function") {
         addPrivateMenu(nga, admin, dashLeft, dashRight);
     }
     admin.menu()
-        .addChild(nga.menu().title('Backends').icon('<span class="fa fa-industry fa-fw"></span>')
+        .addChild(nga.menu().title('Háttérrendszerek').icon('<span class="fa fa-industry fa-fw"></span>')
             .addChild(nga.menu(handlers).icon('<span class="fa fa-cogs fa-fw"></span>'))
             .addChild(nga.menu(connectors).icon('<span class="fa fa-bolt fa-fw"></span>'))
         )
-        .addChild(nga.menu(rxframes).title('Frames').icon('<span class="fa fa-comments fa-fw"></span>'))
+        .addChild(nga.menu(rxframes).title('Keretek').icon('<span class="fa fa-comments fa-fw"></span>'))
         .autoClose(false);
 
     admin.dashboard()
@@ -1402,8 +1402,8 @@ function dashboardTemplate(leftPanel, rightPanel) {
     return `
 <div class="row">
     <div class="col-lg-12">
-        <div class="page-header">
-            <table style="width: 100%"> <tbody><tr> <td> <h1>Dashboard</h1> </td> <td style="text-align: right"><img src="obudai.jpg" alt="Óbudai Egyetem"><img src="albacomp.png" alt="Albacomp"><img src="naik.jpg" alt="NAIK"></td></tr> </tbody></table>
+        <div class="page-header" style="padding-bottom:0px">
+            <table style="width: 100%"> <tbody><tr> <td> <h1>Dashboard</h1> </td> <td style="text-align: right"><img src="admin/obudai.jpg" alt="Óbudai Egyetem" style="width: auto; height: 70px;"><img src="admin/albacomp.png" alt="Albacomp" style="width: auto; height: 70px;"><img src="admin/naik.jpg" alt="NAIK" style="width: auto; height: 70px;"></td></tr> </tbody></table>
         </div>
     </div>
 </div>
