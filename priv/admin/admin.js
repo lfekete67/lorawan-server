@@ -1235,7 +1235,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .perPage(7)
         )
     );
-    var dashLeft = ['szerverek', 'events', 'rxframes'];
+    var dashLeft = ['servers', 'events', 'rxframes'];
     var dashRight = ['gateways', 'nodes', 'connectors'];
 
     // ---- menu
