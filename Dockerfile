@@ -7,7 +7,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apk add --no-cache --virtual build-deps git make wget nodejs-npm && \
     git clone https://github.com/lfekete67/lorawan-server.git && \
-	git config --global url.https://github.com/.insteadOf git://github.com/ \
+	git config --global url.https://github.com/.insteadOf git://github.com/ && \
     cd lorawan-server && \
     make release install && \
     cd .. && \
