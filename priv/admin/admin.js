@@ -1206,7 +1206,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
             .sortField('last_rx')
             .perPage(7)
         )
-        .addCollection(nga.collection(rxframes).title(Frames')
+        .addCollection(nga.collection(rxframes).title('Frames')
             .fields([
                 nga.field('dir')
                     .template(function(entry){ return dirIndicator(entry.values) }),
